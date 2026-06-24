@@ -1,0 +1,77 @@
+:root {
+  --color-primary-container: 10 35 82;     /* #0a2352 */
+  --color-primary: 0 14 47; /* #000e2f */
+}
+
+.bgImg{
+  background-image:
+    linear-gradient(
+      rgb(var(--color-primary-container) / 0.4),
+      rgb(var(--color-primary) / 0.5)
+    ),
+    url('../../assets/hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  width: 100%;
+  height: 80vh;
+}
+
+.form{
+  width: 100%;
+  background-color: aliceblue;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 15px;
+  gap: 1rem;
+  border-style: none;
+  border-radius: 8px;
+}
+.form input{
+  outline: none;
+  font-family: var(--font-body-lg-family);
+}
+
+.center{
+  font-family: var();
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  place-self: center; 
+  inset: 0;
+}
+
+.center h1{
+  color: white;
+}
+
+.btnn{
+  background: transparent;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  font-weight: 100;
+}
+
+.lsbtn{
+  background-color: var(--color-secondary-fixed-dim);
+  box-shadow: 5px 5px 20px -7px rgba(0, 0, 0, 0.25);
+  transition: 0.1s ease;
+}
+
+.lsbtn:hover {
+    scale: 1.02;
+}
+
+.txt{
+  font-family: var(--font-body-lg-family);
+  font-size: var(--font-body-lg-size);
+  font-weight: 100;
+  line-height: var(--font-body-lg-line-height);
+  color: white;
+  opacity: 80%;
+  margin-bottom: 4rem;
+}

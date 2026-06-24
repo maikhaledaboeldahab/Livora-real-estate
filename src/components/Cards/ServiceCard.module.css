@@ -1,0 +1,75 @@
+
+.card{
+    -webkit-box-shadow: 1px 1px 28px -6px rgba(0,0,0,0.15); 
+    box-shadow: 1px 1px 28px -6px rgba(0,0,0,0.15);
+    border-radius: 15px;
+    min-width: 350px;
+    max-width: 450px;
+    margin: 20px;
+    padding: 20px;
+
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+              box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+              border-color 0.3s ease;
+}
+
+.card:hover {
+  /* Negative Y moves the card UP. 8px matches your design system unit */
+  transform: translateY(-8px); 
+  
+  /* Luxury touch: Make the subtle gold outline pop just a bit more on hover */
+  border-color: rgba(201, 146, 58, 0.6); 
+}
+
+.serviceCard {
+  
+}
+
+
+.serviceCard:hover {
+  
+}
+
+.iconWrapper {
+  
+}
+
+.iconWrapper svg{
+    color: #624000 ;
+}
+
+.cardTitle {
+  color: #291800;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -0.01em; 
+  line-height: 1.2;
+}
+
+.cardDescription {
+  
+}
+
+.a {
+    text-decoration: none;
+    color: var(--color-on-primary); /* Maps to your brand color */
+    font-weight: 400;
+    
+    /* Using inline-flex aligns your text and icon perfectly on the same line */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Matches your 8px spacing unit */
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1); 
+}
+
+.a i {
+    font-size: 12px;
+    
+}
+
+/* When the link (.a) is hovered, apply the movement to the icon (i) */
+.a:hover {
+    transform: translateX(4px); /* Smoothly slides the icon 6px to the right */
+}

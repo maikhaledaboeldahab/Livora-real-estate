@@ -1,10 +1,11 @@
-import Hero from "../components/Hero/Hero"
-import FeaturedListing from "../components/Sections/FeaturedListing/FeaturedListing"
+import HeroWrapper from "../components/UI/Herowrapper/HeroWrapper"
+import ServiceSection from "../components/Sections/services/Services"
+
 export default function Home(){
     return(
         <>
-            <Hero/>
-            <FeaturedListing/>
+            <HeroWrapper></HeroWrapper>
+            <ServiceSection></ServiceSection>
         </>
     )
 }

@@ -1,73 +1,83 @@
 import style from "./Footer.module.css";
-import logo from "../../../assets/logo.png";
+import logo from "../../../assets/livora-logo.png"
+
+const FOOTER_LINKS = [
+  { label: "Privacy Policy", href: "#privacy" },
+  { label: "Terms of Service", href: "#terms" },
+  { label: "Press", href: "#press" },
+  { label: "Contact", href: "#contact" },
+];
 
 export default function Footer() {
-  const footer_links = {
-    platform: ["Browse", "List Property", "Pricing", "Agent Portal"],
-    Company: ["About Us", "Investor Relations", "Press", "Contact Support"],
-    Legal: ["Terms Of services", "Privacy policy", "Cookie Policy"],
-    Support: ["Contact Support", "FAQS"],
-  };
   return (
-    <footer className={style.footer}>
-      <hr />
-      <div className="d-flex my-4 mx-5 justify-content-between">
-        <div className={`${style.clmn}`}>
-          <div className="d-flex mb-3">
-            <img src={logo} className={`${style.logo} me-1`} alt="" />
-            <h4 className={`text-h3 ${style.h4}`}>Waymark</h4>
-          </div>
-          <span>
-            Expertly navigating the architecture of real estate transactions
-            with precision and trust.
-          </span>
-          <div className="d-flex my-4 gap-2">
-            <i className="fa-solid fa-earth-americas me-2"></i>
-            <i className="fa-solid fa-share-nodes me-2"></i>
-            <i className="fa-regular fa-envelope me-2"></i>
-          </div>
-        </div>
-        <div className="d-flex">
-          {Object.entries(footer_links).map(([label, links]) => (
-            <div key={label} className="footer-column mx-5">
-              <label>{label}</label>
+    <footer className={`${style.footer} w-100`}>
+      <div className={`container-xl py-5 ${style.inner}`}>
 
-              <ul className={`py-2 ${style.ul}`}>
-                {links.map((link) => (
-                  <li key={link} className={`${style.li} py-2`}>
-                    {link}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-        <div className="">
-          <div className="d-flex flex-column gap-2">
-            <label className={style.label}>Newsletter</label>
-            <span className={style.span}>
-              Get exclusive market insights delivered to your inbox.
+        {/* ── Logo centered ── */}
+        <div className={`d-flex flex-column align-items-center gap-1 mb-4 ${style.logoWrap}`}>
+          <a href="#home" className={`d-flex align-items-center gap-2 text-decoration-none ${style.logo}`}>
+            <img src={logo} className = {style.logoIcon} alt="logo" />
+            <span className="d-flex align-items-baseline">
+              <span className={style.logoGold}>LIVORA</span>
             </span>
+          </a>
+          <p className={`mb-0 ${style.tagline}`}>Curated Excellence.</p>
+        </div>
+
+        {/* ── Nav links row ── */}
+        <nav
+          className={`d-flex flex-wrap justify-content-center align-items-center mb-4 ${style.linkRow}`}
+          aria-label="Footer navigation"
+        >
+          {FOOTER_LINKS.map((link, i) => (
+            <span key={link.label} className="d-flex align-items-center">
+              <a href={link.href} className={style.link}>
+                {link.label}
+              </a>
+              {i < FOOTER_LINKS.length - 1 && (
+                <span className={style.dot} aria-hidden="true" />
+              )}
+            </span>
+          ))}
+        </nav>
+
+    
+        <div className={`w-100 mb-4 ${style.divider}`} />
+
+        <div className={`d-flex flex-column flex-md-row align-items-center justify-content-between w-100 gap-3 ${style.bottomRow}`}>
+
+          <p className={`mb-0 text-center text-md-start ${style.copyright}`}>
+            © 2024 LIVORA. Curated Excellence.
+          </p>
+
+        
+          <div className="d-flex align-items-center gap-1">
+
+            
+            <a href="#instagram" className={style.socialBtn} aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            
+            <a href="#facebook" className={style.socialBtn} aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            
+            <a href="#twitter" className={style.socialBtn} aria-label="X (Twitter)">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+            
+            <a href="#linkedin" className={style.socialBtn} aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            
+
           </div>
-          <form action="" className="d-flex me-3 mt-3">
-            <input
-              type="email"
-              placeholder="Your Email"
-              className={`${style.input}`}
-            />
-            <button className={style.join}>JOIN</button>
-          </form>
         </div>
-      </div>
-      <hr />
-      <div className={`${style.vfoot} d-flex justify-content-between`}>
-        <span className="mx-4">
-          © 2024 Waymark Real Estate. The Guided Path.
-        </span>
-        <div>
-          <span className="mx-4">Designed with Precision</span>
-          <span className="mx-4">Security Verified</span>
-        </div>
+
       </div>
     </footer>
   );

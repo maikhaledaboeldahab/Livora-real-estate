@@ -1,105 +1,199 @@
-.navbg{
-    
-    height: 60px;
-    background-color: color-mix(in srgb, var(--color-on-primary-fixed) 30%, transparent);
-    
-}
 
-.navcont{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navcont a{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap:0.3rem;
-}
-
-.navcont a:hover{
-  scale: 1.02;
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: rgba(8, 8, 8, 0.50);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.06);
+  transition: background-color 0.35s ease, border-color 0.35s ease;
 }
 
 
-.img{
-    
-    height: 30px;
-}
-
-
-.links{
-    display: flex;
-    gap: 1rem;
-
-}
-
-.navcont a{
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.links a {
-  font-family: var(--font-h4-family);
-  text-decoration: none;
-  padding-bottom: 2px;
-  border-bottom: 2px solid transparent;
-  color: white;
-  transition: 0.3s ease;
-}
-
-.links a:hover{
-    border-bottom: 2px solid;
-    color: var(--color-secondary);
-    
-}
-
-.search{
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 68px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  background: #1c2b4a;
-  padding: 6px 15px;
-  border-radius: 8px;
-  width: 250px;
+  justify-content: space-between;
+  gap: 1.5rem;
 }
 
-.search input {
-  border: none;
-  outline: none;
-  background: transparent;
-  color: white;
-  width: 100%;
-  font-size: 14px;
-}
 
-.search input::placeholder {
-  color: #b0b8c9;
-}
-
-.search .icon{
-
-  color: #ffffff;
-}
-
-.profile {
+.logo {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: white;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo img{
+  width: 20px;
+  line-height: 1;
+}
+
+.logoText {
+  display: flex;
+  align-items: baseline;
+}
+
+.logoWhite {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 300;
+  font-size: 22px;
+  letter-spacing: 0.18em;
+  color: #ffffff;
+}
+
+.logoGold {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 300;
+  font-size: 22px;
+  letter-spacing: 0.18em;
+  color: #c9923a;
+}
+
+
+.linkList {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.link,
+.linkActive {
+  position: relative;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: block;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+
+.link {
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.link:hover {
+  color: #e8b86d;
+}
+
+
+.linkActive {
+  font-weight: 500;
+  color: #c9923a;
+}
+
+
+.activeDot {
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #c9923a;
+}
+
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+
+.searchBtn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.72);
   cursor: pointer;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: 0.3s;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+  line-height: 0;
 }
 
-/* Hover effect */
-.profile:hover {
-  background: rgba(255, 255, 255, 0.1);
+.searchBtn:hover {
+  color: #c9923a;
 }
 
-/* Icon style */
-.profile .icon {
-  font-size: 18px;
+
+.enrolBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: #1A1A1A;
+  background-color: #F8BC5F;
+  text-decoration: none;
+  border: 1px solid rgba(201, 146, 58, 0.55);
+  border-radius: 14px;
+  padding: 7px 18px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.enrolBtn:hover {
+  background-color: #DAA147;
+  border-color: rgba(201, 146, 58, 0.85);
+  color:#0F0F0F;
+}
+
+.enrolArrow {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.enrolBtn:hover .enrolArrow {
+  transform: translateX(4px);
+}
+
+
+@media (max-width: 768px) {
+  .linkList {
+    display: none;
+  }
+
+
+  .enrolBtn {
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logoWhite,
+  .logoGold {
+    font-size: 19px;
+  }
+
+  .searchBtn {
+    display: none;
+  }
 }

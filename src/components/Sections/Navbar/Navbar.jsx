@@ -1,38 +1,58 @@
 import style from "./Navbar.module.css";
-import logo from "../../../assets/logo-white-ed.png";
+import logo from "../../../assets/livora-logo.png"
 
-function Navbar() {
+const NAV_LINKS = [
+  { label: "Home", href: "#home", active: true },
+  { label: "Rooms", href: "#rooms" },
+  { label: "Villas", href: "#villas" },
+  { label: "Chalets", href: "#chalets" },
+  { label: "Connect", href: "#connect" },
+  { label: "Trips", href: "#trips" },
+  { label: "Rating", href: "#rating" },
+];
+
+export default function Navbar() {
   return (
-    <nav className={`${style.navbg} d-flex align-items-center`}>
-      <div className={`container ${style.navcont}`}>
-         <a>
-          <img src={logo} alt="logo" className={`${style.img}`} />
-          <h3 className={`text-h3-logo mb-0 `}>Waymark</h3>
-         </a>
-        <div className={`${style.links}`}>
-          <a className={`hover:opacity-100`} href="#">
-            Browse
+    <nav className={style.nav}>
+      <div className={style.inner}>
+
+        <a href="#home" className={style.logo}>
+          <img src={logo}  alt="" />
+          <span className={style.logoText}>
+            <span className={style.logoGold}>LIVORA</span>
+          </span>
+        </a>
+
+        {/* ── Desktop Nav Links ── */}
+        <ul className={style.linkList}>
+          {NAV_LINKS.map((link) => (
+            <li key={link.label}>
+              <a
+                href={link.href}
+                className={link.active ? style.linkActive : style.link}
+              >
+                {link.label}
+                {link.active && <span className={style.activeDot} />}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        
+        <div className={style.actions}>
+
+          
+          <button className={style.searchBtn} aria-label="Search">
+            <i className="fa-brands fa-sistrix"></i>
+          </button>
+
+          <a href="#enrolment" className={style.enrolBtn}>
+            Enrolment
+            <i className={`${style.enrolArrow} fa-solid fa-arrow-right`}></i>
           </a>
-          <a
-            className="hover:opacity-100 hover:text-secondary transition-all"
-            href="#"
-          >
-            List Property
-          </a>
-        </div>
-        <div className="d-flex gap-3">
-            <form className={`${style.search} d-flex`} role="search">
-              <i className={`${style.icon} fa-solid fa-magnifying-glass`}></i>
-              <input className ={`me-2`} type="search" placeholder="Quick Search ..." aria-label="Search"/>
-            </form>
-            <div className={`${style.profile}`}>
-              <i className="fa-regular fa-circle-user"></i>
-              <span>Profile</span>
-            </div>
+
         </div>
       </div>
     </nav>
   );
 }
-
-export default Navbar;

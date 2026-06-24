@@ -1,0 +1,45 @@
+.icon{
+    color: var(--color-primary);
+    font-size: 36px;
+    
+}
+
+.fixedMessageBtn {
+  /* 1. CRITICAL: Fixed positioning anchors it permanently to the viewport */
+  position: fixed;
+  bottom: 60px; /* Distance from the bottom of the screen */
+  right: 80px;  /* Distance from the right edge of the screen */
+  z-index: 999; /* Ensures it floats *above* all other elements on the site */
+
+  /* 2. Sizing & Alignment */
+  border-style: none;
+  background-color: transparent;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  
+  /* 4. Smooth Cinematic Transition */
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+              background-color 0.3s ease;
+}
+
+/* Luxury Interactive States */
+.fixedMessageBtn:hover {
+  /* Subtle lift when hovered, reusing your premium pacing style */
+  transform: translateY(-4px); 
+  
+}
+
+/* Responsive adjustment for clean mobile viewports */
+@media (max-width: 768px) {
+  .fixedMessageBtn {
+    bottom: var(--margin-mobile); /* Repositions smoothly using your mobile margins */
+    right: var(--margin-mobile);  /* */
+    width: 48px;
+    height: 48px;
+  }
+}

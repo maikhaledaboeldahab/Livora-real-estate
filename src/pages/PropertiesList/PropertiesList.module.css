@@ -1,0 +1,223 @@
+/* =========================================
+   Structural Framework Foundations
+   ========================================= */
+.pageWrapper {
+  background-color: var(--color-light-surface, #F9F9F9); /* Light Mode Editorial Mode Canvas */
+  min-height: 100vh;
+}
+
+.container {
+  max-width: var(--container-max, 1440px); /* Fixed Grid Design alignment */
+  margin: 0 auto;
+  padding: 0 var(--margin-desktop, 64px); /* Premium framing matting */
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--margin-mobile, 20px); /* Responsive shrink boundaries */
+  }
+}
+
+/* =========================================
+   Hero Block Section
+   ========================================= */
+.heroSection {
+  height: 80vh;
+  min-height: 400px;
+  background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1440&q=80');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(15,15,15,0.4) 0%, rgba(15,15,15,0.85) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.heroTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300; /* Soft warm serif display rendering */
+  font-size: clamp(32px, 5vw, 56px);
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+}
+
+.heroDivider {
+  width: 120px;
+  height: 2px;
+  background-color: var(--color-primary, #C9923A); /* Pure brand anchor accent line */
+  margin: 0 auto;
+}
+
+/* =========================================
+   Layout Grid & Split System
+   ========================================= */
+.studioBody {
+  padding: 70px; /* Breathable spacing gaps */
+}
+
+.layoutGrid {
+  display: grid;
+  grid-template-columns: 3fr 9fr; /* 12 column split profile system */
+  gap: var(--gutter, 24px); /* System gutters */
+  align-items: start;
+}
+
+@media (max-width: 991px) {
+  .layoutGrid {
+    grid-template-columns: 1fr; /* Responsive collapse */
+  }
+  .studioBody {
+    padding: 60px 0;
+  }
+}
+
+/* Columns */
+.sidebarCol {
+  position: sticky;
+  top: 100px; /* Slides along scrolling window views */
+}
+
+.resultsCol {
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================================
+   Search Controls Area Panel
+   ========================================= */
+.searchBarWrap {
+  position: relative;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.searchInput {
+  width: 100%;
+  height: 52px;
+  background-color: #EFECE6; /* Light surface background frame */
+  border: none;
+  border-bottom: 1px solid rgba(15, 15, 15, 0.15);
+  border-radius: 0px !important; /* Strict architectural lines */
+  padding: 0 50px 0 20px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  font-size: 14px;
+  color: #0F0F0F;
+  outline: none;
+}
+
+.searchIcon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(15, 15, 15, 0.4);
+  font-size: 14px;
+}
+
+/* Metadata Info Rows styling */
+.controlsMetaBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(15, 15, 15, 0.05);
+  margin-bottom: 30px;
+}
+
+.propertiesCount {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+  color: rgba(15, 15, 15, 0.6);
+}
+
+.countHighlight {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 200;
+  color: #0F0F0F;
+}
+
+.sortingMenu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sortLabel {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  font-size: 13px;
+  color: rgba(15, 15, 15, 0.5);
+}
+
+.sortSelectTrigger {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: #0F0F0F;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Results Content Cards Grid mapping */
+.propertiesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Balanced 3-column architectural array */
+  gap: var(--gutter, 24px);
+}
+
+@media (max-width: 1200px) {
+  .propertiesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .propertiesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer Pagination Trigger styling */
+.paginationControlWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.loadMoreBtn {
+  background-color: transparent;
+  border: 1px solid rgba(15, 15, 15, 0.2);
+  border-radius: 0px !important; /* Zero roundness parameters */
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 12px;
+  color: #0F0F0F;
+  padding: 16px 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.loadMoreBtn:hover {
+  border-color: var(--color-primary, #C9923A);
+  color: var(--color-primary, #C9923A);
+  transform: translateY(-2px);
+}

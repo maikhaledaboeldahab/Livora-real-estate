@@ -1,0 +1,123 @@
+.card {
+  position: relative;
+  overflow: hidden;
+  min-height: 380px;
+  background-color: var(--color-surface, #131313);
+  border: 1px solid rgba(201, 146, 58, 0.15); /* Soft gold contour framework */
+  border-radius: 0px !important; /* Enforcing strict 0px shape rules */
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.card:hover {
+  transform: translateY(-8px); /* Premium hover lift action */
+}
+
+.cardImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.card:hover .cardImg {
+  transform: scale(1.05); /* Architectural zoom expansion */
+}
+
+.badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  background-color: rgba(15, 15, 15, 0.85); /* Dark base opacity mask */
+  border: 1px solid var(--color-primary, #C9923A); /* Gold hairline frame */
+  color: var(--color-primary, #C9923A);
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 200;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 6px 14px;
+  border-radius: 0px !important; /* Strict sharp shape */
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  /* Deep obsidian cinematic shielding gradient */
+  background: linear-gradient(
+    to top,
+    rgba(15, 15, 15, 0.95) 0%,
+    rgba(15, 15, 15, 0.4) 60%,
+    rgba(15, 15, 15, 0) 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  z-index: 1;
+}
+
+.cardBody {
+  padding: 24px;
+  width: 100%;
+}
+
+.cardTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300; /* Soft warm serif settings */
+  font-size: 24px;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+  letter-spacing: 0.01em;
+}
+
+.locationRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 16px;
+}
+
+.locationRow i {
+  font-size: 11px;
+  color: var(--color-primary, #C9923A);
+}
+
+.locationText {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  font-size: 13px;
+}
+
+.specsGrid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(251, 251, 251, 0.1);
+  padding-top: 14px;
+}
+
+.price {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 200;
+  color: var(--color-primary, #C9923A);
+  font-size: 15px;
+}
+
+.specItem {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 200;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.specItem i {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.4);
+}
